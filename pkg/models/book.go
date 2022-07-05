@@ -1,9 +1,7 @@
 package models
 
 import (
-	"go-bookstore/pkg/config"
-	config "go-bookstore/pkg/config"
-
+	"github.com/HuanchengHu/golang-tutorial-bookstore/pkg/config"
 	"github.com/jinzhu/gorm"
 )
 
