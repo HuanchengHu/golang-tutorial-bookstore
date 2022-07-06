@@ -16,7 +16,7 @@ import (
 var NewBook models.Book
 
 func GetBook(w http.ResponseWriter, r *http.Request) {
-	newBooks := models.getAllBooks()
+	newBooks := models.GetAllBooks()
 	res, _ := json.Marshal(newBooks)
 	w.Header().Set("Content-Type", "pkglication/json")
 	w.WriteHeader(http.StatusOK)
@@ -62,7 +62,7 @@ func DeleteBook(w http.ResponseWriter, r *http.Request) {
 
 func UpdateBook(w http.ResponseWriter, r *http.Request) {
 	var updateBook = models.Book{}
-	utils.ParseBody(R, UpdateBook)
+	utils.ParseBody(r, UpdateBook)
 	vars := mux.Vars(r)
 	bookId := vars["bookId"]
 	ID, err := strconv.ParseInt(bookId, 0, 0)

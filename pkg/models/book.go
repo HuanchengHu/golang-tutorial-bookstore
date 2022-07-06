@@ -5,7 +5,7 @@ import (
 	"github.com/jinzhu/gorm"
 )
 
-var db gorm.DB
+var db *gorm.DB
 
 type Book struct {
 	gorm.Model
@@ -26,7 +26,7 @@ func (b *Book) CreateBook() *Book {
 	return b
 }
 
-func getAllBooks() []Book {
+func GetAllBooks() []Book {
 	var Books []Book
 	db.Find(&Books)
 	return Books
